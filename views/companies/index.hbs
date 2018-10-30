@@ -1,0 +1,38 @@
+<h1 class="slogan text-center text-bold">{ Dev kiếm một chỗ đứng và cứng chỗ đó! }</h1>
+<input class="typeahead form-control" id="seachInput" placeholder="Tìm tên công ty ở đây." type="text" autocomplete="off" />
+
+<div class="row companies">
+    <div class="col-md-8 col-sm-12 col-xs-12">
+        <h2 class="section-title">Loa loa rì viu nào.</h2>
+        {{#each companies as |comapny|}}
+            <div class="company row" rel="{{ this._id }}">
+                <div class="logo col-md-2 center-block">
+                    <a href="/company/{{ this._id }}" title="{{ this.name }}">
+                        <img align="middle" class="d-block mx-auto logo" src="{{comapny.logo}}" alt="{{ thí.name }}" width="100">
+                    </a>
+                </div>
+                <div class="detail col-md-10">
+                    <h4 class="margin-top-zero">
+                        <a href="/company/{{ this._id }}">{{ this.name }}</a>
+                    </h4>
+                    <p>
+                        <i class="fa fa-map-marker fa-lg"><span> {{this.location}}</span></i>
+                        <i class="fa fa-cog fa-lg"><span> {{this.type}}</span></i>
+                        <i class="fa fa-cog fa-users fa-lg"><span> {{this.size}}</span></i>
+                        <i class="fa fa-cog fa-globe fa-lg"><span> {{this.country}}</span></i>
+                    </p>
+                    <p>
+                        <a href="/company/{{ this._id }}">
+                            <i class="fa fa-star reviewText">&nbsp;Rờ víu ()</i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        {{/each}}
+        <div class="clearfix"></div>
+        {{> pagination pageInfo = pageInfo}}
+    </div>
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <h2 class="section-title">Những bình luận mới nhất</h2>
+    </div>
+</div>

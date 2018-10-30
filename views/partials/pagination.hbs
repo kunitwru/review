@@ -1,0 +1,11 @@
+<nav aria-label="...">
+    <ul class="pager">
+        {{#if pageInfo.prevp }}
+            <li class="previous"><a href="?page={{ pageInfo.prevp }}"><span aria-hidden="true">&larr;</span> Older</a></li>
+        {{else}}
+            <li class="previous disabled"><a href="/"><span aria-hidden="true">&larr;</span> Older</a></li>
+        {{/if}}
+
+        <li class="next"><a href="?page={{ pageInfo.nextp }}">Newer <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>
